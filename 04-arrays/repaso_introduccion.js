@@ -1,3 +1,6 @@
+//  1. Métodos para la manipulación de elementos
+
+
 
 
 const numeros = [1,2,3,4,5];
@@ -257,10 +260,21 @@ console.log(" =============== 6. filter =====================");
 // * El método reduce()aplica una función a un acumulador y a cada valor de un array (de izquierda a derecha) para reducirlo a un único valor.
 
 
-console.log(" =============== 5. filter =====================");
+console.log(" =============== 7. filter =====================");
 // *El método some() verifica si algún elemento de un array cumple con el test implementado por la función brindada. Si se aprueba, devuelve “true” de lo contrario “false”.
 
 
+
+console.log(" =============== 8. sort =====================");
+
+
+
+console.log(" =============== 7. Array.from =====================");
+
+
+
+
+console.log(" =============== 7. filter =====================");
 
 
 
