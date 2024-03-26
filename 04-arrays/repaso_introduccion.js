@@ -1,4 +1,186 @@
-//  1. Métodos para la manipulación de elementos
+//*  1. Métodos para la manipulación de elementos
+
+// Estos métodos permiten agregar, eliminar o reemplazar elementos en un array.
+// push(): Agrega uno o más elementos al final del array y devuelve la nueva longitud del array.
+// pop(): Elimina el último elemento del array y devuelve ese elemento.
+// shift(): Elimina el primer elemento del array y devuelve ese elemento.
+// unshift(): Agrega uno o más elementos al principio del array y devuelve la nueva longitud del array.
+// splice(): Cambia el contenido de un array eliminando, reemplazando o agregando elementos
+
+console.log("============= pop ==================");
+const arregloFrutas = ["Banana", "manzana", "kiwi", "Pera", "Uva"]; 
+// eliminar uva
+const frutaEliminada = arregloFrutas.pop();
+console.log(arregloFrutas);
+
+// agregar 2 elementos al principio del arreglo
+
+//unshift array.unshift(elemento1Agregado, ..., elementoNAgregado)
+
+
+const longitud = arregloFrutas.unshift("Mango", "Papaya"); 
+console.log(arregloFrutas);
+console.log("Longitud: "+longitud);
+
+
+console.log(" ============= Ejercicio unshift =============");
+const tope = 10;
+
+// agregar 10 elementos al arreglo usando solamente unshift, while y por medio de la longitud que da unsshitf
+
+const arregloUnshift = [];
+
+let tamArreglo = 0;
+console.log("tam arreglo: "+tamArreglo);
+let i = 0; //condicion que va cambiando con el i++ en aumento de 1
+
+// while (tamArreglo < 10) {
+//     tamArreglo = arregloUnshift.unshift(i);
+//     console.log("tam arreglo en while: "+tamArreglo);
+//     i++;
+//}
+
+for (let index = 0; index < 10; index++) {
+    arregloUnshift.unshift(index);   
+}
+
+
+// while(i< 10){
+//     arregloUnshift.unshift(i); 
+//     i++;
+// }
+
+console.log("arreglo final: "+arregloUnshift);
+//  9,8,7,6,5,4,3,2,1,0
+
+
+console.log("============= Ejercicio shift =============");
+
+// No tienes que pasarle parametros
+arregloUnshift.shift();
+console.log("arreglo final: "+arregloUnshift);// 8,7,6,5,4,3,2,1,0
+for (let index = 0; index < arregloUnshift.length; index++) {
+    arregloUnshift.shift();
+}
+
+console.log("arreglo final shift: "+arregloUnshift); //  3, 2, 1, 0
+
+// pruebas de escritorio del ejercicio shift
+
+// i --> 0   0 < 9 --> true    shift() 8
+// i --> 1   1 < 8 --> true    shift() 7
+// i --> 2   2 < 7 --> true    shift() 6 
+// i --> 3   3 < 6 --> true    shift() 5 
+// i --> 4   4 < 5 --> true    shift() 4
+// i --> 5   5 < 5 --> False    No entra al for 3,2,1,0
+
+
+console.log("========= Ejercicio splice ============="); 
+// array.splice(start, deleteCountSiEsQue, itemAgregado1, ..., itemAgregadoN)
+// start --> El índice a partir del cual empieza a agregar o eliminar elementos.
+// deleteCountSiEsQue --> Número de elementos a eliminar desde el índice de inicio.
+// itemAgregado1, ..., itemAgregadoN --> Elementos a agregar en el array, comenzando en el índice de inicio.
+
+
+const arregloSplice = ["Banana", "Manzana", "Platano"];
+// puede insertar elementos en cualquier posicion
+console.log(arregloSplice[1]);
+arregloSplice.splice(1,0, "Fresa", "Mango");
+console.log("arreglo splice: ",arregloSplice); // ["Banana","Fresa","Mango","Manzana","Platano"]
+
+
+// ! agregar un ejercicio combinado usando push, pop, shift y unshift
+
+//* 2. Métodos para la búsqueda y comparación de elementos
+
+//* Estos métodos permiten buscar elementos en un array o comparar sus elementos.
+
+// indexOf(): Devuelve el primer índice en el que se encuentra un elemento especificado en el array, o -1 si el elemento no se encuentra.
+// lastIndexOf(): Devuelve el último índice en el que se encuentra un elemento especificado en el array, o -1 si el elemento no se encuentra.
+// find(): Devuelve el primer elemento del array que cumple con la condición proporcionada.
+// findIndex(): Devuelve el índice del primer elemento del array que cumple con la condición proporcionada.
+// includes(): Determina si un array incluye un determinado elemento, retornando true o false según corresponda.
+// every(): Comprueba si todos los elementos en el array pasan la prueba implementada por la función proporcionada.
+// some(): Comprueba si al menos un elemento en el array pasa la prueba implementada por la función proporcionada.
+
+console.log("================  indexOf =================");
+//
+//array.indexOf(elementoABucar) = regresa el primer indice de dónde se encuentre el elemento
+//array.indexOf(elemntoABuscar, desdeQueIndiceVasABuscar);
+
+const arregloIndex = ["Banana", "Manzana", "Platano", 3, 20];
+console.log(arregloIndex.indexOf("Banana"));  // devuelve el indice, en este caso 0
+console.log(arregloIndex.indexOf("Banana", 1)); // -1, ya que ponemos a buscarnos a partir del indice 1
+
+console.log("============= lastIndexOf ========================");
+/* 
+    *SINTAXIS: 
+        string.lastIndexof(valorBusqueda) aqui empieza a buscar desde la posicion 0
+        string.lastIndexof(valorBusqueda, indiceDesdeDondeSeBusca)
+        !sensible a mayusculas o minusculas
+ */
+ const arregloLastIndex = ["Banana", "Manzana", "Platano", "Uva", "Banana"];
+console.log(arregloLastIndex.lastIndexOf("Banana")); //4
+
+
+
+console.log("============= findIndex ==================");
+
+const arregloFind = ["Banana", "Manzana", "Platano", "Cereza", "Sandia"];
+
+// Una función callback es cualquier función que se pasa como argumento a otra función y se ejecuta después de que la función principal ha completado su ejecución.
+
+// array.find(callbackFn, thisArg)
+// arregloFind.find(function(currentValue, index, array){}, thisArg )
+// callbackFn(te da un return) es una función que se ejecuta para cada elemento del array hasta que encuentra uno donde la función devuelve un valor verdadero (truthy). Esta función recibe tres argumentos:
+// currentValue: El elemento actual que se está procesando en el array.
+// index (opcional): El índice del elemento actual que se está procesando en el array.
+// arr (opcional): El array sobre el cual se está llamando find().
+// thisArg (opcional): Un objeto que se utilizará como this cuando se ejecute callbackFn.
+
+//callbackFn
+//A function to execute for each element in the array. It should return a truthy value to indicate a matching element has been found, and a falsy value otherwise. The function is called with the following arguments
+
+// find recibe una funcion como argumento, la funcion se ejecutará para cada elemento del array, el return de la funcion 
+//numero sera function(numero) {return numero> 3}
+
+const numerosF = [1, 2, 3, 4, 5];
+
+// La función callback se pasa como argumento a find()
+const primerNumeroMayorQueTres = numeros.find(function(numero) {
+ return numero > 3; 
+});
+
+
+// TODO: 3. Métodos para la transformación de arrays
+// Estos métodos crean un nuevo array con los resultados de aplicar una función a cada elemento del array original.
+
+// map(): Crea un nuevo array con los resultados de llamar a una función para cada elemento del array.
+// filter(): Crea un nuevo array con todos los elementos que pasan la prueba implementada por la función proporcionada.
+// reduce(): Aplica una función a un acumulador y a cada valor de un array (de izquierda a derecha) para reducirlo a un único valor.
+// reduceRight(): Aplica una función a un acumulador y a cada valor de un array (de derecha a izquierda) para reducirlo a un único valor.
+
+
+
+/* TODO: 4. Métodos para la combinación y separación de arrays */
+// Estos métodos permiten combinar o separar arrays.
+
+// concat(): Une dos o más arrays y devuelve un nuevo array.
+// join(): Une todos los elementos de un array en una cadena y devuelve esta cadena.
+// slice(): Devuelve una copia superficial de una porción del array en un nuevo array.
+// split(): Divide una cadena en un array de subcadenas.
+
+
+
+// 5. Métodos para la iteración de arrays
+// Estos métodos permiten iterar sobre los elementos de un array.
+
+// forEach(): Ejecuta una función proporcionada una vez para cada elemento del array.
+// for...of: Ejecuta un bloque de código para cada elemento del array.
+// for tradicional
+
+
+
 
 
 
@@ -22,7 +204,7 @@ const numeros = [1,2,3,4,5];
 
 // ==================== Sintaxis del forEach =========================
 
-// TODO: itera sobre elementos de un array y ejecutar una función de callback para cada elemento.
+// itera sobre elementos de un array y ejecutar una función de callback para cada elemento.
  // array.forEach(function(currentValue, index, arr), thisValue)
 
 // La función de callback proporcionada como argumento se ejecutará una vez para cada elemento en el array, en orden, y puede realizar cualquier operación deseada con el elemento actual.
