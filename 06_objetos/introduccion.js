@@ -12,16 +12,16 @@ let objeto = {
 // Creación con new Object()
 // Otra forma de crear un objeto es utilizando el constructor Object con la palabra clave new.
 
-let objeto = new Object();
+let persona = new Object();
 objeto.nombre = "Juan";
 objeto.edad = 30;
 objeto.ciudad = "Madrid";
-// Acceso a Propiedades
+// ========================== Acceso a Propiedades  ===========================================
 // Para acceder a las propiedades de un objeto, se utiliza la notación de punto o la notación de corchetes.
 
 console.log(objeto.nombre); // Salida: Juan
 console.log(objeto["edad"]); // Salida: 30
-Métodos
+// ============================= Métodos  ===========================================
 // Los objetos pueden tener métodos, que son funciones asociadas al objeto. Los métodos se definen de la misma manera que las propiedades, pero los valores son funciones.
 
 let objeto = {
@@ -35,7 +35,7 @@ console.log(objeto.presentarse()); // Salida: Hola, mi nombre es Juan
 // this en Objetos
 // Dentro de los métodos de un objeto, this se refiere al objeto mismo. Esto permite acceder a las propiedades del objeto desde dentro de sus métodos.
 
-Prototipos
+// Prototipos
 // Todos los objetos en JavaScript tienen una propiedad especial llamada prototype. Los objetos pueden heredar propiedades y métodos de su prototipo. Esto es fundamental para la herencia y la reutilización de código en JavaScript.
 
 function Persona(nombre, edad) {
