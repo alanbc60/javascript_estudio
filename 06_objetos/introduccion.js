@@ -16,6 +16,9 @@ let persona = new Object();
 objeto.nombre = "Juan";
 objeto.edad = 30;
 objeto.ciudad = "Madrid";
+
+console.log("persona: "+persona);
+
 // ========================== Acceso a Propiedades  ===========================================
 // Para acceder a las propiedades de un objeto, se utiliza la notación de punto o la notación de corchetes.
 

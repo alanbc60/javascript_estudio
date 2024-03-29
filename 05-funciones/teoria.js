@@ -100,8 +100,8 @@ const sumaReduce  = function sumaArray(numeros) {
    return numeros.reduce((acumulador, elementoActual) => acumulador + elementoActual, 0);
 }
 
-const numerosEj1 = [1, 2, 3, 4, 5];
-console.log(sumaReduce(numerosEj1)); // Debería imprimir 15
+const numerosEj2 = [1, 2, 3, 4, 5];
+console.log(sumaReduce(numerosEj2)); // Debería imprimir 15
 
 // ================== Ejercicio 3 ====================
 
@@ -114,8 +114,8 @@ function cuadrados(numeros) {
  return numerosCuadrado;
 }
 
-const numerosEj2 = [1, 2, 3, 4, 5];
-console.log(cuadrados(numerosEj2)); // Debería imprimir [1, 4, 9, 16, 25]
+const numerosEj3 = [1, 2, 3, 4, 5];
+console.log(cuadrados(numerosEj3)); // Debería imprimir [1, 4, 9, 16, 25]
 
 
 // ================== Ejercicio 4 ====================
@@ -130,37 +130,50 @@ function maximo(numeros) {
 // 4, 5 --> return (5)
 
 // otra forma de resolverlo
-const numerosEj3 = [1, 2, 3, 4, 5];
-const maximoNumeros = Math.max(...numerosEj3);
+const numerosEj4 = [1, 2, 3, 4, 5];
+const maximoNumeros = Math.max(...numerosEj4);
 console.log("Maximo: "+maximoNumeros);
-
-
-console.log(maximo(numerosEj3)); // Debería imprimir 5
+console.log(maximo(numerosEj4)); // Debería imprimir 5
 
 
 // ================== Ejercicio 5 ====================
 // Ejercicio 5: Contar Elementos Únicos en un Array
 // Escribe una función que tome un array de números como argumento y devuelva un objeto donde las claves son los números únicos del array y los valores son la cantidad de veces que aparece cada número.
-function contarElementos(numeros) {
+function contarElementos(array) {
+
+
+    let conteoElementos = [];
     // debemos trannsformar el array a un array de objetos
-    const arrayObj  = numeros.map( elemento => ({clave: elemento}));
+    // const arrayObj  = numeros.map( elemento => ({elemento, conteo: 1}));
 
     // obtener cuantas veces se repite
-    const elementoEncontrado = arrayObj.includes()
+    //const elementoEncontrado = arrayObj.includes()
 
-    
+    array.forEach(elemento => {
+        const elementoEncontrado = conteoElementos.find( obj => obj.elemento === elemento)
 
+        if(elementoEncontrado)
+            elementoEncontrado.conteo+=1;
+
+        else
+            conteoElementos.push({elemento, conteo: 1})
+        
+    });
+
+    return conteoElementos;
 }
 
-const numerosEj4 = [1, 2, 3, 4, 5, 2, 3];
-console.log(contarElementos(numerosEj4)); // Debería imprimir {1: 1, 2: 2, 3: 2, 4: 1, 5: 1}
+const numerosEj5 = [1, 2, 3, 4, 5, 2, 3];
+console.log(contarElementos(numerosEj5)); // Debería imprimir {1: 1, 2: 2, 3: 2, 4: 1, 5: 1}
 
 // ================== Ejercicio 6 ====================
 // Ejercicio 6: Transformar un Array de Strings en Mayúsculas
 // Escribe una función que tome un array de strings como argumento y devuelva un nuevo array donde cada string se ha convertido a mayúsculas. 
 
+
 function mayusculas(strings) {
- // Tu código aquí
+  const arrayMayusculas = strings.map(elemento => elemento.toUpperCase());
+  return arrayMayusculas;
 }
 
 const strings = ["hola", "mundo", "javascript"];
