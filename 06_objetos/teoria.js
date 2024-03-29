@@ -10,6 +10,8 @@ let objeto = {
  ciudad: "Madrid"
 };
 
+
+
 console.log(objeto);
 
 
@@ -34,7 +36,7 @@ const miObjeto = Object.create({
    }
 });
 
-console.log(miObjeto); // Debería imprimir el objeto con sus propiedades
+console.log(miObjeto.saludar()); // Debería imprimir el objeto con sus propiedades
 
 
 
@@ -71,11 +73,22 @@ let objeto2 = {
       return `Hola, mi nombre es ${this.nombre}`;
    }
 };
+
+// crear un objeto a partir del obj 1 o con las mismas carcateristicas
+
+// No es recomendable crear varios objetos porque usa hoisting, ya que El hoisting se aplica principalmente a las declaraciones de variables y funciones
+let objeto3 = {
+   nombre: "Juan",
+   apellido: "Cervantes",
+   presentarse: function() {
+      return `Hola, mi nombre es ${this.nombre}`;
+   }
+};
+
+
 //* this en Objetos
 // Dentro de los métodos de un objeto, this se refiere al objeto mismo, es el nombre dle objeto, pero se usa this por si el nombre del objeto cambia.Esto permite acceder a las propiedades del objeto desde dentro de sus métodos.
 console.log(objeto2.presentarse()); // Salida: Hola, mi nombre es Juan
-
-
 
 console.log("========== Objetos dentro de los objetos (objetos anidados o compuestos) ===============")
 let alumno = {
@@ -87,7 +100,8 @@ let alumno = {
       ciudad: "Madrid",
       codigoPostal: "28001"
    }
-  };
+};
+
   
 // Acceso a propiedades de objetos anidados
 
@@ -103,51 +117,67 @@ console.log(alumno);
 
 // ================== Herencia y prototipos ======================
 
-console.log("========== Herencia y prototipos ===============")
+console.log("========== prototipos ===============")
 
 // La herencia en JavaScript se logra a través de la cadena de prototipos. Cuando creas un objeto, puedes especificar otro objeto como su prototipo. Esto significa que el objeto hereda todas las propiedades y métodos del objeto prototipo.
 
-
+ // objeto prototipo
 let animal = {
+   Humano: "Donnaji", 
+   Edad:10, 
+   Color:"cafe",
+   numAmigos: 3,
+   alturaMtrs: 1.10, 
    hablar: function() {
       console.log(this.nombre + " hace un sonido.");
    }
-  };
-  
-let perro = Object.create(animal);
-perro.nombre = "Fido";  
-perro.hablar(); // Fido hace un sonido.
+};
+
+
+// mamifero hereda propiedades del objeto prototipo.
+let mamifero = Object.create(animal);
+mamifero.nombre = "Mamifero"; // crea una porpiedad
+
+// mamifero --> nombre
+console.log("color del mamifero: ",mamifero.Color)
+// buscar en mamifero el color
+// 1. Busca si mamifero tiene la propiedad
+//  si la tiene devuelve el valor de la propiedad
+// Si no la tiene se va a su objeto padre hasta llegar el prototpo
+
+mamifero.condicion = "Estable";
+
+console.log("edad mamifero: "+mamifero.Edad);
+mamifero.hablar();
+
+// El create() no imprime el objeto completo usando console.log()
+console.log(mamifero);
+// Accediendo a las propiedades heredadas
+console.log(mamifero.Humano); // Debería imprimir "Donnaji"
+console.log(mamifero.Edad); // Debería imprimir 10
+
+
+// Objeto perro, hereda de mamifero
+let perro = Object.create(mamifero);
+perro.nombre = "Perro"; // cambia el valor de la propiedad nombre
+
+console.log(`El perro tiene ${perro.numAmigos} amigos en total`);
+
+// Animal ---> mamifero ---> perro
 
 
 // ===== setPrototypeOf =========
+/*Los objetos en JavaScript son "contenedores" dinámicos de propiedades (referidas como sus propiedades particulares). 
+Los objetos en JavaScript poseen un enlace a un objeto prototipo. Cuando intentamos acceder a una propiedad de un objeto, 
+la propiedad no sólo se busca en el propio objeto sino también en el prototipo del objeto, en el prototipo del prototipo, 
+y así sucesivamente hasta que se encuentre una propiedad que coincida con el nombre o se alcance el final de la cadena de prototipos.
+*/
   
 let gato = {};
-Object.setPrototypeOf(perro, animal);
- perro.nombre = "Fido";
+Object.setPrototypeOf(gato, animal); //establece el objeto animal como el prototipo del objeto gato.
+gato.nombre = "Anburgueso";
   
-  perro.hablar(); // Fido hace un sonido.
-  Object.setPrototypeOf() //establece el objeto animal como el prototipo del objeto gato.
-
-  // ==== Herencia de clases =====
-
-// Con la introducción de las clases en ES6, la herencia se ha vuelto más sencilla y directa. Las clases en JavaScript son azúcar sintáctico sobre la herencia basada en prototipos.
-
-class Animal {
- hablar() {
-    console.log(this.nombre + " hace un sonido.");
- }
-}
-
-class Perro extends Animal {
- constructor(nombre) {
-    super();
-    this.nombre = nombre;
- }
-}
-
-let fido = new Perro("Fido");
-fido.hablar(); // Fido hace un sonido.
-
+gato.hablar(); // Fido hace un sonido.
 
 
 // ============================= Métodos de los objetos  ===========================================
@@ -176,53 +206,70 @@ console.log(Object.entries(objEntries)); // [["a", 1], ["b", 2], ["c", 3]]
 // 4.Object.assign(target, ...sources)
 
 // Este método se utiliza para copiar los valores de todas las propiedades enumerables de uno o más objetos fuente a un objeto destino. Devuelve el objeto destino.
-
-const target = { a: 1, b: 2 };
-const source = { b: 4, c: 5 };
-const returnedTarget = Object.assign(target, source);
-console.log(target); // { a: 1, b: 4, c: 5 }
+//Modifica las propiedades del objetivo
+const objetivo = { a: 1, b: 2 };
+const fuente = { b: 4, c: 5 };
+const returnedTarget = Object.assign(objetivo, fuente);
+console.log(objetivo); // { a: 1, b: 4, c: 5 }
 console.log(returnedTarget); // { a: 1, b: 4, c: 5 }
 
 
 // 5. Object.getOwnPropertyNames(obj)
-// Este método devuelve un array que contiene todas las propiedades (enumerables o no) encontradas directamente en un objeto.
+// Este método devuelve un array que contiene todas las claves (enumerables o no) encontradas directamente en un objeto.
 
-const obj = { a: 1, b: 2, c: 3 };
-Object.defineProperty(obj, 'd', {
+const objgetOwnPropertyNames = { a: 1, b: 2, c: 3 };
+Object.defineProperty(objgetOwnPropertyNames, 'd', {
  value: 4,
  enumerable: false
 });
-console.log(Object.getOwnPropertyNames(obj)); // ["a", "b", "c", "d"]
+
+
+
+// enumerable está establecido en true, la propiedad será visible cuando se itere sobre las propiedades del objeto (por ejemplo, usando un bucle for...in o el método Object.keys()). Si enumerable está establecido en false, la propiedad no será visible en estas enumeraciones.
+
+
+console.log(Object.getOwnPropertyNames(objgetOwnPropertyNames)); // ["a", "b", "c", "d"]
 
 
 // 6. Object.getOwnPropertySymbols(obj)
 // Este método devuelve un array que contiene todos los símbolos encontrados como propiedades en un objeto.
 
-const obj = { a: 1, b: 2, c: 3 };
+const objgetOwnPropertySymbols = { a: 1, b: 2, c: 3 };
 const symbol = Symbol('symbol');
-obj[symbol] = 4;
+objgetOwnPropertySymbols[symbol] = 3;
 
-console.log(Object.getOwnPropertySymbols(obj)); // [Symbol(symbol)]
+console.log(Object.getOwnPropertySymbols(objgetOwnPropertySymbols)); // [Symbol(symbol)]
 
 //7. Object.freeze(obj)
 // Este método congela un objeto, lo que significa que no se pueden agregar nuevas propiedades al objeto, no se pueden eliminar propiedades existentes, y no se pueden cambiar los valores de las propiedades existentes.
 
-const obj = { a: 1, b: 2, c: 3 };
+let objFrezzes = { a: 1, b: 2, c: 3 };
 
-//8. Object.freeze(obj);
+Object.freeze(objFrezzes);
 
-obj.a = 4; // No tiene efecto
-console.log(obj.a); // 1
+objFrezzes.a = 4; // No tiene efecto
+console.log(objFrezzes.a); // 1
 
 // 9.Object.seal(obj)
 // Este método sella un objeto, lo que significa que no se pueden agregar nuevas propiedades al objeto, y no se pueden eliminar propiedades existentes. Sin embargo, los valores de las propiedades existentes pueden cambiar.
 
-const obj = { a: 1, b: 2, c: 3 };
-Object.seal(obj);
-obj.a = 4; // Tiene efecto
-console.log(obj.a); // 4
-delete obj.a; // No tiene efecto
-console.log(obj.a); // 4
+
+console.log(" == seal ==")
+const objSeal = { a: 1, b: 2, c: 3 };
+Object.seal(objSeal);
+objSeal.a = 4; // Tiene efecto
+console.log(objSeal.a); // 4
+delete objSeal.a; // No tiene efecto
+console.log(objSeal); 
+
+// Para "desellar" el objeto, puedes crear una copia del objeto
+//Para crear la copia de un objeto se pone con "...nombreObjetoOriginal"
+//Para modificar un objeto seal se puede hacer creando una copia del objeto
+const objDesellado = {...objSeal};
+delete objDesellado.a;
+console.log(objDesellado);
+
+
 
 
 //  Ejercicios de métodos de json

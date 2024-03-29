@@ -18,7 +18,7 @@ function saludo(mensaje){
 }
 
 
-/* 1.  función expresada
+/* 2.  función expresada
     Sintaxis:
         Una expresión de función es una función asignada a una variable. Esto permite que la función se pase como argumento a otras funciones, se almacene en estructuras de datos, o se devuelva como resultado de otra función.
 */
@@ -46,7 +46,7 @@ const empleadoAnonima = function (nombre){
 empleado("Alan");
 
 
-/* 1. arrow función
+/* 4. arrow función
     Sintaxis:
         las arrow functions son una sintaxis más corta para escribir funciones anónimas. Son especialmente útiles para funciones que se pasan como argumentos a otras funciones, como callbacks. Son una variante de la expresión de función.
 
