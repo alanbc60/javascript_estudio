@@ -38,7 +38,7 @@ console.log(objeto.presentarse()); // Salida: Hola, mi nombre es Juan
 // Prototipos
 // Todos los objetos en JavaScript tienen una propiedad especial llamada prototype. Los objetos pueden heredar propiedades y métodos de su prototipo. Esto es fundamental para la herencia y la reutilización de código en JavaScript.
 
-function Persona(nombre, edad) {
+function Empleado(nombre, edad) {
  this.nombre = nombre;
  this.edad = edad;
 }
