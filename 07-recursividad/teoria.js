@@ -60,14 +60,31 @@ function invertirCadena(cadena) {
     }
 }
 
+function invertirCadena2(cadena, cadenaInvertida){
+    for (let index = cadena.length -1; index >= 0; index--) {
+        const element = cadena[index]; 
+        cadenaInvertida = cadenaInvertida + cadena[index]
+        console.log(element); //a l o h
+        console.log(cadenaInvertida);
+   }
+}
+
+invertirCadena2("Hola", "");
+
+// pruebas de escritorio de invertirCadena2
+// Entrada      // operacion
+//   1°                index = 4 - 1 = 3 cadena[3]=a cadenaInvertida = "" + a = "a"
+//   2°                index = 3 - 1 = 2 cadena [2] = l cadenaInvertida = "a" + l = al
+//   3°                index = 2 - 1 = 1 cadena[1]=o cadenaInvertida = "al" + o = alo
+//   4°                index = 1 - 1 = 0 cadena [0] = h cadenaInvertida = "alo" + h = aloh
+
+
 // num de entrada                       retorno
     // 1. primer plato en llegar         return "a" + invertirCadena(cadena.slice(0, 3 ));  //  a + loh --> aloh
     // 2. segundo plato en llegar        return "l" + invertirCadena(cadena.slice(0, 2 ));  // l + oh  --> loh 
     // 3. tercer plato en llegar         return "o" + invertirCadena(cadena.slice(0, 1 ));  // o + h   --> oh
     // 4. cuarto plato en llegar         return "h" + invertirCadena(cadena.slice(0, 0 ));  // h 
     // 5. quinto plato en llegar         return "" 
-
-
 
 
 console.log(invertirCadena("Hola")); // Debería imprimir "aloH"
@@ -80,13 +97,50 @@ console.log(invertirCadena("Hola")); // Debería imprimir "aloH"
 // === Ejercicio 3 =====
 
 //Escribe una función recursiva que busque un elemento en una lista.
-function buscarElemento(lista, elemento) {
+
+//console.log(buscarElemento([1, 2, 3, 4, 5], 3));
+
+function buscarElementoBucle(lista, elemento) {
+    for (let index = 0; index < lista.length; index++) {
+        const element = lista.slice(index); 
+        if(element[0] === elemento){
+            return true;
+        }
+        
+    }
     // Implementa la función aquí
 }
 
-console.log(buscarElemento([1, 2, 3, 4, 5], 3)); // Debería imprimir true
-console.log(buscarElemento([1, 2, 3, 4, 5], 6)); // Debería imprimir false
 
+
+console.log("¿elemento encontrado ?: ",buscarElemento([1, 2, 3, 4, 5], 3));
+
+function buscarElemento(lista, elemento) {
+    
+    // caso base
+    if(lista.length === 0)
+        return false
+    
+    // Cuando el primer elemento es el elemento a buscar
+    if (lista[0] === elemento )
+        return true;
+
+    else{
+        console.log("lista: "+lista.slice(1));
+        console.log("Elemento: ",elemento);
+       return buscarElemento( lista.slice(1), elemento);
+    }
+}
+
+// num de entrada                       retorno
+// 1. primer plato en llegar               return buscarElemento( lista.slice(1), 3); --> Encuentra el elemento
+// 2. segundo plato en llegar              return buscarElemento( lista.slice(1), 3);   --> [3,4,5] --> No
+// 3. tercer plato en llegar               return buscarElemento( lista.slice(1), 3); --> [2, 3, 4, 5]  // recibes listacompleta ya que el quinto plato no afecto a la lista 
+// 4. cuarto plato en llegar               return false
+
+
+console.log(buscarElemento([1, 2, 3, 4, 5], 3)); // Debería imprimir true
+//console.log(buscarElemento([1, 2, 3, 4, 5], 6)); // Debería imprimir false
 
 
 // const str = "Hola mundo";
@@ -99,7 +153,62 @@ console.log(buscarElemento([1, 2, 3, 4, 5], 6)); // Debería imprimir false
 
 
 
+// ===== Ejercicio 4 ====
+
+// calcular la cantidad de caracteres que se repiten en una cadena de texto. Para este ejemplo, en la palabra "parangaricutirimicuaro" la letra "i" se repite 4 veces.
+
+
+function totalLetrasPalabra(palabra,letra) {
+    let contLetra = 0;
+    for (let index = 0; index < palabra.length; index++) {
+        const element = palabra[index];
+
+        console.log("letra actual: ",element);
+        console.log("tipo de dato de letra actual: ",typeof element);
+        console.log("letra arg: "+ typeof letra)
+
+        if(element == letra){
+            console.log("Entro al if");
+            contLetra++;
+        }
+            
+    }
+    return contLetra;
     
+}
+
+console.log("El total de letras es: ",totalLetrasPalabra("parangaricutirimicuaro", "i"));
+
+
+// ejercicio en recursividad
+ function totalLetrasPalabraRecursividad(palabra, letra){
+    if(palabra.length <= 1){
+        return palabra === letra ? 1 : 0;
+    }
+
+    if(palabra[0] === letra){
+        return 1 + totalLetrasPalabraRecursividad(palabra.slice(1), letra); 
+    }
+
+    else{
+        const ultimoCaracter = [palabra.length - 1];
+        console.log("ultimoo el elemento: ",palabra[ultimoCaracter]);
+        return totalLetrasPalabraRecursividad(palabra.slice(1), letra); 
+    }
+  
+ }
+ 
+// num de entrada                               retorno
+    // 1. primer plato en llegar   "vivir"      return totalLetrasPalabraRecursividad(palabra.slice(1), letra);  0 + acum = 0 + 2
+    // 2. segundo plato en llegar  "ivir"       return 1 + totalLetrasPalabraRecursividad(palabra.slice(1), letra); 1 + acum --> 1 + 1 = 2
+    // 3. tercer plato en llegar   "vir"        return totalLetrasPalabraRecursividad(palabra.slice(1), letra); 0 + 
+    // 4. cuarto plato en llegar    "ir"        return 1 +totalLetrasPalabraRecursividad(palabra.slice(1), letra);  1 + 
+    // 5. quinto plato en llegar     "r"        return palabra === letra ? 1 : 0;   -->  0
+
+
+
+
+ console.log("El total de letras en rec es: ",totalLetrasPalabraRecursividad("vivir", "i"));
 
 
 

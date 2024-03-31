@@ -173,7 +173,7 @@ const primerCoche = juguetes.find(esUnCoche);
 
 
 
-// Ejercicio 1: Encontrar el primer número par
+    // Ejercicio 1: Encontrar el primer número par
 // Dado el siguiente array de números, encuentra el primer número par.
 
 const numerosArray = [1, 3, 5, 7, 9, 2, 4, 6, 8];
@@ -573,10 +573,6 @@ console.log(" =========== Métodos para la iteración de arrays  ============")
 // for tradicional
 
 
-
-
-
-
 const numeros = [1,2,3,4,5];
 
 // iterar con for tradicional
@@ -643,7 +639,6 @@ numeros2.forEach( (element, index) => {
     console.log("elemento: ",element);
     console.log("indice: "+index);
 });
-
 
 
 

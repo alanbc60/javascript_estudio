@@ -19,7 +19,7 @@ const recordCollection = {
     }
   };
   
-  // Only change code below this line
+  
   function updateRecords(records, id, prop, value) {
     if (prop !== "tracks" && value !== "") {
       records[id][prop] = value;
