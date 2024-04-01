@@ -182,7 +182,6 @@ function crearPromesa(fn, ms) {
   
 
 // manejo de promesas o consumo de ellas
-
 // La función resolve() se ejecuta cuando la promesa se haya completado exitosamente. La función reject() se ejecuta cuando la promesa se haya rechazado.
 
 // para manejar el resultado de una promesa se puede utilizar la función .then() o .catch()

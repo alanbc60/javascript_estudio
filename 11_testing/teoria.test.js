@@ -1,5 +1,3 @@
-
-
 // ejemplos de testing
 
 function suma(a, b) {
