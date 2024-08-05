@@ -277,7 +277,6 @@ let miPerroAbs = new Perro('Fido');
 let miGatoAbs = new Gato('Whiskers');
 
 
-
 // Llamando al método hacerSonido en cada instancia
 
 miPerro.hacerSonido(); // El perro ladra

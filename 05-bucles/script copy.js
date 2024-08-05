@@ -113,7 +113,7 @@ for(i=1; i=nums6.length; i++){
 
 // Imprimir números del 1 al 10 excepto el 5
 for(i=0; i<11; i++){
-    if i !== 5{
+    if (i !== 5){
     console.log(i);
 }
 }
@@ -121,7 +121,7 @@ for(i=0; i<11; i++){
 
 // Imprimir números pares del 1 al 10
 for(i=0; i<11; i++){
-    if i%2 === 0{
+    if (i%2 === 0){
     console.log(i);
 }
 }
@@ -129,7 +129,7 @@ for(i=0; i<11; i++){
 
 // Encontrar el primer número divisible por 7 entre 1 y 100
 for(i=0; i<101; i++){
-    if i%7 === 0{
+    if (i%7 === 0){
         console.log(i)
     }
 }
@@ -137,7 +137,7 @@ for(i=0; i<101; i++){
 
 // Encontrar el primer número mayor que 5 en un arreglo
 for(i=0; i<array.length; i++){
-    if array[i]>5{
+    if (array[i]>5){
         console.log(i)
     }
 }

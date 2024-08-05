@@ -29,7 +29,6 @@
     - Permite evaluar una expresión y ejecutar diferentes bloques de código según el valor de la expresión.
     
     ```js
-    javascriptCopy code
     switch (expresion) {
         case valor1:
             // Código a ejecutar si expresion === valor1

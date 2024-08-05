@@ -18,7 +18,7 @@ for (let i = 0; i < 3; i++) {
 }    
 
 // 3. **Cree una estructura repetitiva para multiplicar todos los números en un array determinado y devolver el producto.**
-//     **`var nums = [1, 5, 70, -2, -1, -0.5];`**
+//  **`var nums = [1, 5, 70, -2, -1, -0.5];`**
 
 const numbers = [1, 5, 70, -2, -1, -0.5];
 let output = 1;
@@ -30,7 +30,6 @@ console.log(output);
 
 // imprimir el dibujo 
 
-// markdownCopy code
 // *
 // **
 // ***
@@ -46,8 +45,6 @@ for(let i=0 ; i<5 ; i++){
     draw += "\n";
 }
 console.log(draw);
-
-
 
 // Escribe un programa que genere los primeros 20 términos de la secuencia de Fibonacci utilizando un bucle for.
 

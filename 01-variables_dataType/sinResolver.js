@@ -24,38 +24,39 @@ console.log(administrador);
 // TODO: Ejercicios de tipos de datos
 // Ejercicio 3.1
 console.log(typeof(15));
-// Prediction: number
+// Prediction: 
 // Actual: 
 
 // Ejercicio 3.2
 console.log(typeof(5.5));
-// Prediction: number
+// Prediction: 
 // Actual: 
 
 // Ejercicio 3.3
 console.log(typeof(NaN));
-// Prediction: NaNn:( 
+// Prediction: 
 // Actual: correcto es number
 
 // Ejercicio 3.4
 console.log(typeof("hello"));
-// Prediction: string
+// Prediction: 
 // Actual: 
 
 // Ejercicio 3.5
 console.log(typeof(true));
-// Prediction: boolean
+// Prediction: 
 // Actual: 
 
 // Ejercicio 3.6
 console.log(typeof(1 != 2));
-// Prediction: boolean
+// Prediction: 
 // Actual: 
 
 // Ejercicio 3.7
 console.log("hamburger" + "s");
-// Prediction: hamburgers
+// Prediction:
 // Actual:
+
 // Ejercicio 3.8
 console.log("hamburgers" - "s");
 // Prediction: NaN
@@ -68,22 +69,22 @@ console.log("1" + "3");
 
 // Ejercicio 3.10
 console.log("1" - "3");
-// Prediction: -2 
+// Prediction: 
 // Actual: 
 
 // Ejercicio 3.11
 console.log("johnny" + 5);
-// Prediction: johny5
+// Prediction: 
 // Actual: 
 
 // Ejercicio 3.12
 console.log("johnny" - 5);
-// Prediction: NaN
+// Prediction: 
 // Actual: 
 
 // Ejercicio 3.13
 console.log(99 * "luftbaloons");
-// Prediction: lufbaloons *99
+// Prediction: 
 // Actual: 
 
 // Ejercicio de simbolo
@@ -91,7 +92,7 @@ console.log(99 * "luftbaloons");
 let sym1 = Symbol("id");
 let sym2 = Symbol("id");
 console.log(sym1 === sym2);
-// Prediction: false 
+// Prediction:  
 //El tipo de dato symbol es único y detergente
 
 

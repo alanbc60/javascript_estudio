@@ -80,14 +80,20 @@ console.log("========= splice =============");
 
 //* Definición 
 /*  
-     El método splice() en JavaScript es un método de los arrays que se utiliza para cambiar el contenido de un array eliminando, reemplazando o agregando elementos.
+     El método splice() en JavaScript es un método de los arrays que se utiliza para cambiar el contenido de un 
+     array eliminando, reemplazando o agregando elementos.
 
     ¿Cómo funciona splice()?
-        El método splice() toma al menos un argumento: el índice en el que comenzar a cambiar el array. Este índice es conocido como start. Además, puede tomar argumentos adicionales que especifican cuántos elementos eliminar y qué elementos agregar.
+        El método splice() toma al menos un argumento: el índice en el que comenzar a cambiar el array. Este 
+        índice es conocido como start. Además, puede tomar argumentos adicionales que especifican cuántos 
+        elementos eliminar y qué elementos agregar.
 
-        Eliminar elementos: Si se especifica un deleteCount (el segundo argumento), splice() eliminará ese número de elementos a partir del índice start.
-        Agregar elementos: Si se proporcionan elementos adicionales después de deleteCount, splice() insertará esos elementos en el array en la posición start, desplazando los elementos existentes hacia la derecha.
-        Reemplazar elementos: Si se combinan deleteCount con elementos adicionales, splice() eliminará deleteCount elementos a partir del índice start y luego insertará los elementos adicionales en esa posición.
+        Eliminar elementos: Si se especifica un deleteCount (el segundo argumento), splice() eliminará ese número 
+        de elementos a partir del índice start.
+        Agregar elementos: Si se proporcionan elementos adicionales después de deleteCount, splice() insertará 
+        esos elementos en el array en la posición start, desplazando los elementos existentes hacia la derecha.
+        Reemplazar elementos: Si se combinan deleteCount con elementos adicionales, splice() eliminará deleteCount 
+        elementos a partir del índice start y luego insertará los elementos adicionales en esa posición.
 */
 
 const arregloSplice = ["Banana", "Manzana", "Platano"];

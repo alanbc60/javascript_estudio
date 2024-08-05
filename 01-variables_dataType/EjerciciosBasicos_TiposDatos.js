@@ -26,41 +26,39 @@ console.log("debe generar " + admin);
 // TODO: Ejercicios de tipos de datos
 // Ejercicio 3.1
 console.log(typeof(15));
-// Prediction: number
-// Actual: 
+// Resultado: number
 
 // Ejercicio 3.2
 console.log(typeof(5.5));
-// Prediction: number
-// Actual: 
+// Resultado: number
+
 
 // Ejercicio 3.3
 console.log(typeof(NaN));
-// Prediction: number
-// Actual: 
+// Resultado: number
+
 
 // Ejercicio 3.4
 console.log(typeof("hello"));
-// Prediction: string
-// Actual: 
+// Resultado: string
 
 // Ejercicio 3.5
 console.log(typeof(true));
-// Prediction: boolean
-// Actual: 
+// Resultado: boolean
+
 
 // Ejercicio 3.6
 console.log(typeof(1 != 2));
-// Prediction: boolean
-// Actual: 
+// Resultado: boolean
+
 
 // Ejercicio 3.7
 console.log("hamburger" + "s");
-// Prediction: hamburgers
-// Actual: 
+// Resultado: hamburgers
 
 // Ejercicio 3.8
 console.log("hamburgers" - "s");
+// El simbolo "+" en los String sirve de concatenacion, mientras que el simbolo "-" no. Hace una operacion aritmetica
 // Prediction: NaN
 // Actual: 
 
@@ -68,34 +66,41 @@ console.log("hamburgers" - "s");
 
 console.log("Ejercicio 3.9");
 console.log("1" + 3);
+console.log(typeof("1")); // string
+
+// Como "1" es un string, se concatena con 3 (aunque sea numero), 
 // Prediction: 13
 // Actual: 
 
 // Ejercicio 3.10
+console.log("Ejercicio 3.10");
+// Lo que pasa aqui es que trata de hacer la operacion resta, primero verifica el String y trata de convertir a tipo number.
+// Si en el String encuentra una letra entonces arrojará un NaN
+console.log("1AF" - 3);
 console.log("1" - "3");
-// Prediction: -2
-// Actual: 
+// Resultado: -2
 
+console.log("Ejercicio 3.11");
 console.log("1a" - "3");
-// Prediction: -2
-// Actual: 
-
-// Ejercicio 3.11
-console.log("johnny" + 5);
-// Prediction: johnny5
-// Actual: 
+// Resultado: NaN;
 
 // Ejercicio 3.12
+console.log("johnny" + 5);
+// Resultado: johnny5
+// Actual: 
+
+// Ejercicio 3.13
 console.log("johnny" - 5);
 // Prediction: NaN
 // Actual: 
 
-// Ejercicio 3.13
+// Ejercicio 3.14
 console.log(99 * "luftbaloons");
 // Prediction: NaN
 // Actual: 
 
-// Ejercicio de simbolo
+
+// Ejercicio de simbolo (Ejercicio 3.15)
 
 let sym1 = Symbol("id"); 
 let sym2 = Symbol("id");
@@ -106,15 +111,14 @@ console.log(sym1 === sym2);
 
 // =================== Ejercicio 4 ================
 
-// Ejercicio: Declara una variable con un número, una cadena y un valor booleano. Luego, convierte cada uno a otro tipo de dato
+// Ejercicio: Declara una variable con un número, una cadena y un valor booleano. Luego, convierte cada uno a
+// otro tipo de dato
 
 const num = 11;
 const string = "hello";
 const boolean = true;
 
-
 //conversion 
-
 const booleanString = boolean.toString();
 console.log(booleanString);
 
