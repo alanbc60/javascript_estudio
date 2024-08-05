@@ -1,16 +1,17 @@
-// Los objetos en JavaScript son una de las características más poderosas y fundamentales del lenguaje. Un objeto es una colección de propiedades, y una propiedad es una asociación entre un nombre (o clave) y un valor. Los valores de las propiedades pueden ser datos primitivos, como números, cadenas de texto, booleanos, o incluso otros objetos.
+// Un objeto es una colección de propiedades, y una propiedad es una asociación entre un nombre (o clave) y
+//  un valor. Los valores de las propiedades pueden ser datos primitivos, como números, cadenas de texto, 
+//  booleanos, o incluso otros objetos.
 
 // ================================= Creación de Objetos  ===============================
 // 1. Creación Literal
-// La forma más común de crear un objeto es mediante la notación literal de objeto, que es una lista de pares clave-valor encerrados entre llaves {}.
+// La forma más común de crear un objeto es mediante la notación literal de objeto, que es una 
+// lista de pares clave-valor encerrados entre llaves {}.
 
 let objeto = {
  nombre: "Juan",
  edad: 30,
  ciudad: "Madrid"
 };
-
-
 
 console.log(objeto);
 
