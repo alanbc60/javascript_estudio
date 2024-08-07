@@ -8,7 +8,7 @@ console.log(a);
 
 // =========== 2. Conversion de number a string ===========
 
-//* Conversion implicita
+//* Conversion implicita (tambien se le conoce como coerción)
     // cualquier operador aritmetico que no sea un +, se convierte implicitamente a number
     let b = 10 - "10";
     console.log("tipo de dato:",typeof b , " --valor: " , b);

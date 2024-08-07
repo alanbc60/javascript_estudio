@@ -1,14 +1,14 @@
 
 //  =========================== Ejercicio 1 ===========================
 
-// Imagina que tienes un array de objetos, donde cada objeto representa a un usuario con propiedades como nombre, edad, ciudad, y hobbies. El objetivo es procesar estos datos para obtener información específica.
+// Imagina que tienes un array de objetos, donde cada objeto representa a un usuario con propiedades 
+// como nombre, edad, ciudad, y hobbies. El objetivo es procesar estos datos para obtener información específica.
 
 // Paso 1: Filtrar usuarios mayores de 18 años.
 // Paso 2: Transformar la lista de usuarios filtrados para incluir solo sus nombres.
 // Paso 3: Verificar si un usuario específico está en la lista de usuarios mayores de 18 años.
 // Paso 4: Contar cuántos usuarios tienen un hobby específico.
 // Paso 5: Sumar todas las edades de los usuarios mayores de 18 años.
-
 
 const usuarios = [
     { nombre: "Ana", edad: 20, ciudad: "Madrid", hobbies: ["leer", "cine"] },
@@ -17,7 +17,6 @@ const usuarios = [
     { nombre: "David", edad: 15, ciudad: "Sevilla", hobbies: ["musica", "deporte"] },
     { nombre: "Elena", edad: 25, ciudad: "Zaragoza", hobbies: ["cocinar", "leer"] },
 ];
-
 
 console.log(usuarios)
 

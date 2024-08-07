@@ -1,13 +1,16 @@
 
 // ¿ Que es una función ? 
-// R: Bloques de código reutilizables que realizan una tarea en espcifico ya que permiten dividir el código en partes más pequeñas y manejables, facilitando su mantenimiento y comprensión. 
+// R: Bloques de código reutilizables que realizan una tarea en espcifico ya que permiten dividir el 
+// código en partes más pequeñas y manejables, facilitando su mantenimiento y comprensión. 
 
 // ¿ Cómo se define una función ?
 console.log(" ============= Definición de funciones =====================")
 
 /* 1.  función declarada
     Sintaxis:
-        La declaración de función se realiza utilizando la palabra clave function, seguida del nombre de la función, los paréntesis que contienen los parámetros (si los hay) y las llaves que contienen el cuerpo de la función.
+        La declaración de función se realiza utilizando la palabra clave function, seguida del nombre de 
+        la función, los paréntesis que contienen los parámetros (si los hay) y las llaves que contienen el 
+        cuerpo de la función.
     
     function nombreDeLaFuncion(parametros){
         declaraciones que definen lo que hara la función
@@ -17,18 +20,16 @@ function saludo(mensaje){
     console.log("Hola......... "+mensaje);
 }
 
-
 /* 2.  función expresada
     Sintaxis:
-        Una expresión de función es una función asignada a una variable. Esto permite que la función se pase como argumento a otras funciones, se almacene en estructuras de datos, o se devuelva como resultado de otra función.
+        Una expresión de función es una función asignada a una variable. Esto permite que la función 
+        se pase como argumento a otras funciones, se almacene en estructuras de datos, o se devuelva 
+        como resultado de otra función.
 */
 
 const empleado = function saludar(nombre){
     console.log("Hola......... "+nombre);
 }
-
-//
-
 empleado("Alan");
 
 
@@ -41,17 +42,17 @@ const empleadoAnonima = function (nombre){
     console.log("Hola......... "+nombre);
 }
 
-//
-
-empleado("Alan");
+empleadoAnonima("Alan");
 
 
 /* 4. arrow función
     Sintaxis:
-        las arrow functions son una sintaxis más corta para escribir funciones anónimas. Son especialmente útiles para funciones que se pasan como argumentos a otras funciones, como callbacks. Son una variante de la expresión de función.
+        las arrow functions son una sintaxis más corta para escribir funciones anónimas. Son 
+        especialmente útiles para funciones que se pasan como argumentos a otras funciones, como 
+        callbacks. Son una variante de la expresión de función.
 
      
-    Cassos para declarar una función flecha:
+    Casos para declarar una función flecha:
     
     () => expresión   // caso sin parametros/argumentos
     param => expresión // caso con un argumento
@@ -63,7 +64,6 @@ empleado("Alan");
     () => {
         declaraciones
     }
-
 
     parametro => {
         declaraciones
@@ -168,8 +168,8 @@ console.log(contarElementos(numerosEj5)); // Debería imprimir {1: 1, 2: 2, 3: 2
 
 // ================== Ejercicio 6 ====================
 // Ejercicio 6: Transformar un Array de Strings en Mayúsculas
-// Escribe una función que tome un array de strings como argumento y devuelva un nuevo array donde cada string se ha convertido a mayúsculas. 
-
+// Escribe una función que tome un array de strings como argumento y devuelva un nuevo array donde cada 
+//string se ha convertido a mayúsculas. 
 
 function mayusculas(strings) {
   const arrayMayusculas = strings.map(elemento => elemento.toUpperCase());
